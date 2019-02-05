@@ -1,11 +1,16 @@
 package org.algorithms.examples.misc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Permutations {
 	public static void main(String[] args) {
-		String str = "1234567890";
+		String str = "1234";
 		int n = str.length();
 		Permutations permutation = new Permutations();
-		permutation.permute(str, 0, n - 1);
+		for(String s: permutation.permute(str, 0, n - 1)) {
+			System.out.println(s);
+		}
 	}
 
 	/**
@@ -18,19 +23,27 @@ public class Permutations {
 	 * @param end
 	 *            end index
 	 */
-	private void permute(String str, int begin, int end) {
-		if (begin == end)
-			System.out.println(str);
+	private List<String> permute(String str, int begin, int end) {
+		ArrayList<String> list = new ArrayList<>();
+		permute(str, begin, end, list);
+		return list;
+	
+	}
+	
+	private void permute(String str, int begin, int end, List<String> list) {
+		if (begin == end) {
+			//System.out.println(str);
+			list.add(str);
+		}
 		else {
 			for (int i = begin; i <= end; i++) {
-				// System.out.println("before swapping:" + str);
 				str = swap(str, begin, i);
-				permute(str, begin + 1, end);
+				permute(str, begin + 1, end, list);
 				str = swap(str, begin, i);
-				// System.out.println("after swapping:" + str);
 			}
 		}
 	}
+
 
 	/**
 	 * Swap Characters at position
@@ -51,5 +64,4 @@ public class Permutations {
 		charArray[pos2] = temp;
 		return String.valueOf(charArray);
 	}
-
 }

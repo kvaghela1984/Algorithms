@@ -39,8 +39,8 @@ public class Stack {
 	}
 
 	/**
-	 * Returns true if the stack is empty. Returns false if there are one or
-	 * more items on the stack.
+	 * Returns true if the stack is empty. Returns false if there are one or more
+	 * items on the stack.
 	 */
 	public boolean isEmpty() {
 		return (top == null);

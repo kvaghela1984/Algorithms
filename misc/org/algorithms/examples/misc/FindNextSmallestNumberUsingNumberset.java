@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.TreeSet;
 
 public class FindNextSmallestNumberUsingNumberset {
-	static TreeSet<Integer> numbers = new TreeSet();
+	static TreeSet<Integer> numbers = new TreeSet<Integer>();
 
 	public static void main(String[] args) {
 		// String string = "15945614299834759984596876123456789";
-		String string = "3054321";
+		String string = "3354321";
 		System.out.println("Input  is:" + string);
 		System.out.println("Result is:" + findNextBiggestNumber(string));
 
@@ -32,10 +32,10 @@ public class FindNextSmallestNumberUsingNumberset {
 				return "-1";
 			}
 		}
-
-		if (pivot < 0) {
-			return "-1";
-		}
+//
+//		if (pivot < 0) {
+//			return "-1";
+//		}
 
 		System.out.println("pivot:" + array[pivot]);
 		// We found a position which needs to be swapped with other digit. left
@@ -43,6 +43,8 @@ public class FindNextSmallestNumberUsingNumberset {
 
 		// below code will find the smallest number which is bigger than the
 		// number present in pivot location and place it next to pivot.
+
+		System.out.println("Step 0:" + Arrays.toString(array));
 
 		for (int j = pivot + 1; j < array.length; j++) {
 			// System.out.println(array[j]);

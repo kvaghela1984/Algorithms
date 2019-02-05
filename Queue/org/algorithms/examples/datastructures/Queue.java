@@ -49,4 +49,50 @@ public class Queue {
 	public int size() {
 		return size;
 	}
+
+	public void sort() {
+
+		if (size != 0) {
+			int x = dequeue();
+
+			sort();
+
+			sortedInsert(x);
+		}
+
+	}
+
+	private void sortedInsert(int x) {
+
+		if (size < 2) {
+			enqueue(x);
+		} else {
+			if (x > head.item && x > tail.item) {
+				enqueue(x);
+			} else if(x < head.item && x < tail.item){
+				
+				enqueue(x);
+				enqueue(dequeue());
+			}else {
+				while(true) {
+					enqueue(dequeue());
+					
+					if((x < head.item && x > tail.item)) {
+						enqueue(x);
+						break;
+					}
+					
+				}
+				
+			}
+			
+
+		}
+		if (size > 1) {
+			while (head.item > tail.item) {
+				enqueue(dequeue());
+			}
+		}
+
+	}
 }

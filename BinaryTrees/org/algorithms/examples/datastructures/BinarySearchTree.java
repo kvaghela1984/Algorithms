@@ -93,9 +93,9 @@ public class BinarySearchTree {
 				node = node.right;
 			}
 
-			// if(node == null){
-			// return -1;
-			// }
+			 if(node == null){
+			 return -1;
+			 }
 		}
 		TreeNode temp = node;
 		while (temp != null && temp.item != i) {

@@ -5,12 +5,12 @@ public class BinarySearch {
 	public static void main(String[] args) {
 		int[] input = { 31, 41, 51, 58, 71, 98 };
 
-		System.out.println(search(input, 0, input.length - 1, 30));
+		System.out.println(search(input, 0, input.length - 1, 51));
 
 	}
 
 	public static int search(int[] arrayIn, int fromIndex, int toIndex, int key) {
-		if (fromIndex <= toIndex) {
+		if (fromIndex >= toIndex) {
 			if (arrayIn[fromIndex] == key) {
 				return fromIndex;
 			} else {

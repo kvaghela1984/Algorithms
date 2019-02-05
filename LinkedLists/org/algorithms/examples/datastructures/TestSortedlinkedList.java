@@ -11,7 +11,7 @@ public class TestSortedlinkedList {
 		lst.insert(0);
 		lst.insert(9);
 		lst.insert(2);
-		lst.insert(4);
+		lst.insert(14);
 
 		lst.print();
 

@@ -5,7 +5,7 @@ public class BinarySearchwithoutRecursion {
 	public static void main(String[] args) {
 		int[] input = { 31, 41, 51, 58, 71, 98 };
 
-		System.out.println(search(input, 85));
+		System.out.println(search(input, 58));
 
 	}
 
